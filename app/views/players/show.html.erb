@@ -1,0 +1,21 @@
+<h1>Stats for <%= @player.name %>, Champion of Click Quest</h1>
+
+<% if @player.cur_hp >0 %>
+
+	<%= "#{@player.name} is a new hero, having defeated #{@player.score} monsters in the forest so far." %><br><br>
+	<%= "#{@player.name} has a sword that looks sharp enough to cut through #{@player.weapon} pieces of paper and is wearing armor that looks strong enough to withstand #{@player.armor} arrows." %><br><br>
+	<%= "#{@player.name} currently has a sack full of #{@player.gold} gold coins and has the stamina of #{@player.cur_hp} bears." %><br><br>
+
+	<%= link_to "Send #{@player.name} into the woods to clear it of mobs", player_mobs_path(@player.id) %><br>
+	<%#= link_to "Send #{@player.name} into the woods to clear it of mobs", mobs_path(:player_id => @player.id)%>
+	<%= link_to "Buy #{@player.name} some sweet upgrades", edit_player_path %><br>
+
+<% elsif @player.cur_hp <=0 %>
+
+	<%= "#{@player.name} was a legendary hero, having defeated #{@player.score} forest monsters before their untimely death." %><br><br>
+	<%= "#{@player.name} wielded a magical blade enchanted by #{@player.weapon} wizards and wore a full suit of armor crafted by #{@player.armor} dwarves." %><br><br>
+	<%= "Sadly, #{@player.name} died with only #{@player.gold} gold coins to their name." %><br><br>
+
+	<%= link_to "Go back to the scoreboard", players_path %><br>
+
+<%end%>

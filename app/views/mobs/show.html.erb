@@ -1,0 +1,25 @@
+<h1><%= @player.name %>'s Epic Battle with a <%=@mob.mob_name%></h1>
+
+<%= flash[:damage] = "You hit #{@mob.mob_name} for #{@player.player_hit} damage." %><br>
+<%= flash[:damage] = "#{@mob.mob_name} hits you for #{@mob.mob_hit} damage." %>
+
+<% if (@mob.mob_cur_hp >0) && (@player.cur_hp >0)%>
+
+	<h2>The battle continues!</h2>
+	<%= "#{@mob.mob_name}'s current HP: #{@mob.mob_cur_hp}"  %><br>
+	<%= "#{@player.name}'s current HP: #{@player.cur_hp}"  %><br><br>
+	<%= link_to "Attack the #{@mob.mob_name} again!", player_mob_path(@player.id, @mob.id) %>
+
+<% elsif (@mob.mob_cur_hp <=0) && (@player.cur_hp >0)%>
+
+	<h2>Victory!</h2>
+	<%= "#{@player.name} ended the fight with #{@player.cur_hp} HP" %><br><br>
+	<%= link_to "Send #{@player.name} to look for more things to fight", player_mobs_path %>
+
+<% elsif (@player.cur_hp <=0) %>
+
+	<h2>Defeat!</h2>
+	<%= "#{@player.name} has died, and the #{@mob.mob_name} continues on its way. GG"  %><br><br>
+	<%= link_to "View score and create a new character", players_path %>
+
+<%end%>

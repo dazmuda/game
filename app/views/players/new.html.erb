@@ -1,0 +1,9 @@
+<h1>Click Quest - Create a Character</h1>
+
+<%= form_for(@player) do |f| %>
+
+	<%= f.label :name, "Name your character:" %>
+	<%= f.text_field :name %><br>
+	<%= f.submit "Create" %>
+
+<% end %>

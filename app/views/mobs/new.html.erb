@@ -1,0 +1,25 @@
+<h1>Click Quest - Create a Mob (NOT FOR YOU TO TOUCH, USER!)</h1>
+
+<%= form_for [@mob], :url => player_mobs_path do |f| %>
+
+	<%= f.label :mob_name, "Name the mob:" %>
+	<%= f.text_field :mob_name %>
+	<br>
+	<!-- <%= f.label :mob_armor, "Mob armor:" %>
+	<%= f.text_field :mob_armor %>
+	<br>
+	<%= f.label :mob_gold, "Mob gold:" %>
+	<%= f.text_field :mob_gold %>
+	<br>
+	<%= f.label :mob_max_hp, "Mob's max HP:" %>
+	<%= f.text_field :mob_max_hp %>
+	<br>
+	<%= f.label :mob_cur_hp, "Mob's current HP:" %>
+	<%= f.text_field :mob_cur_hp %>
+	<br>
+	<%= f.label :mob_hit, "Mob's first hit:" %>
+	<%= f.text_field :mob_hit %> -->
+	<br>
+	<%= f.submit "Create" %>
+
+<% end %>

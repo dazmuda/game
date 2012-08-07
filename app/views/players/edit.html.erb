@@ -1,0 +1,23 @@
+<h1>Buy things for <%= @player.name %>, Champion of Click Quest</h1>
+
+Type 0 if you are poor and don't want to buy anything. <br>
+Type 1 to have a blacksmith sharpen your sword for 50g. <br>
+Type 2 to have him soup up your armor for 50g. <br>
+Type 3 to go to the doctor and have him inject you with steroids for 10g. <br><br>
+
+<%= form_for(@player) do |f| %>
+
+	<%= f.label :action, "So what do you want to buy with your #{@player.gold} gold?" %>
+	<%= f.text_field :action %>
+	<%#max_hp is a defunct column that now holds the player's buy action %>
+	<br>
+	<%= f.label :name, "Rename #{@player.name}" %>
+	<%= f.text_field :name %>
+	<br>
+	<%= f.submit "Submit" %>
+
+<% end %>
+
+<br>
+
+<%= link_to "Delete poor #{@player.name}?", @player, method: :delete, data: { confirm: "Seriously? That's cold." } %>

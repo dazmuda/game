@@ -1,0 +1,12 @@
+<h1>Click Quest - The Evil Forest</h1>
+<h2><%= "There are many unsightly looking monsters in this forest. Choose one to attack it."%></h2>
+
+<% @mobs.each do |mob|%>
+
+	<% if mob.mob_cur_hp >0 %>
+	<li><%= link_to "Attack the #{mob.mob_name}", player_mob_path(@player.id,mob.id) %></li>
+	<% end %>
+	
+<% end %>
+
+<br><%= link_to "I'm so scared I'm going to run back home!", player_path(@player.id) %>
