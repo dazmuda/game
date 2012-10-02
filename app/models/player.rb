@@ -15,15 +15,15 @@ class Player < ActiveRecord::Base
   
   def check_buy(player_id)
     @player = Player.find(player_id)
-    if @player.action == 1
+    if (@player.action == 1 && @player.gold.to_i>=50)
       @player.weapon = @player.weapon.to_i + 1
       @player.gold = @player.gold.to_i - 50
       @player.save
-    elsif @player.action == 2
+    elsif (@player.action == 2 && @player.gold.to_i>=50)
       @player.armor = @player.armor.to_i + 1
       @player.gold = @player.gold.to_i - 50
       @player.save
-    elsif @player.action == 3
+    elsif (@player.action == 3 && @player.gold.to_i>=10)
       @player.cur_hp = @player.cur_hp.to_i + 5
       @player.gold = @player.gold.to_i - 10
       @player.save

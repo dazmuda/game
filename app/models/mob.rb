@@ -37,11 +37,10 @@ class Mob < ActiveRecord::Base
       @mob.mob_max_hp = rand(30..50)
       @mob.save
     end
-    #@mob = Mob.find(mob_id)
     @mob.mob_hit = 0
     @mob.mob_cur_hp = @mob.mob_max_hp.to_i
     @mob.mob_gold = @mob.mob_max_hp.to_i *5
-    puts @mob.mob_max_hp
+    #puts @mob.mob_max_hp
     @mob.save
   end
   

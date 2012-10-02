@@ -24,7 +24,7 @@ class MobsController < ApplicationController
   def create
     @mob = Mob.new(params[:mob])
     @mob.save
-    @mob.rando(@mob.id)
+    #@mob.rando(@mob.id)
     redirect_to player_mobs_path
   end
 
@@ -40,8 +40,8 @@ class MobsController < ApplicationController
   end
 
   def destroy
-    @mob = Mob.find(params[:id])
     @player = Player.find(params[:player_id])
+    @mob = Mob.find(params[:id])
     @mob.destroy
   end
 
