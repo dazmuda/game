@@ -5,15 +5,17 @@ This is a Rails game I created during App Academy to solidify my understanding o
 
 == How to Play
 
-1. Clone this project called "game" onto your computer.
+1. Clone this project onto your computer.
 
-2. Use your terminal to change your directory to "game" and start the web server.
-       <tt>cd desktop/coolStuff/game</tt> (or wherever you put it)
-       <tt>rails server</tt>
+2. In your terminal, change your directory to "game" and start the web server.
+       <tt>cd desktop/superCoolStuff/game (or wherever you put it)
+       rails server</tt>
 
-3. Go to http://localhost:3000/players and click the button to create a new character. I'm going to assume your playerID is 1 in the next few URLs.
+3. Go to http://localhost:3000/players and click the button to create a new character.
+I'm going to assume your playerID is 1 in the next few URLs.
 
-4. Ask a friend to come over and create new enemies for you to fight by visiting http://localhost:3000/players/1/mobs/new You will be able to fight these enemies using other player IDs, too.
+4. Ask a friend to come over and create new enemies for you to fight by visiting http://localhost:3000/players/1/mobs/new 
+You will be able to fight these enemies using other player IDs, too.
 
 5. Now go back to http://localhost:3000/players and play the game as your character!
 
